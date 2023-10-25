@@ -6,5 +6,5 @@ export const reducers  = {
 }
 
 export interface AppState {
-  dailyforecastsList: DailyForecastsListState
+  dailyForecastsList: DailyForecastsListState
 }

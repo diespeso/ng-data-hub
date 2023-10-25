@@ -1,1 +1,5 @@
 <p>daily-forecasts-list-view works!</p>
+
+<div *ngFor="let forecast of this.forecasts">
+  {{forecast.day}}, {{forecast.min_temp}}, {{forecast.max_temp}}
+</div>
