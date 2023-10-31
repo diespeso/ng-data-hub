@@ -38,7 +38,7 @@ export class DailyForecastsListViewComponent {
 
     })
 
-    console.log(this.forecasts)
+
 
   }
 }

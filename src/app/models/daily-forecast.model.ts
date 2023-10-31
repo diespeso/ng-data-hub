@@ -1,5 +1,5 @@
 export interface IDailyForecast {
-  day: String,
+  day: Date,
   min_temp: number,
   max_temp: number,
 }

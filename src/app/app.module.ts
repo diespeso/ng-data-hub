@@ -1,3 +1,7 @@
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,6 +15,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { DailyForecastsEffects } from './store/daily-forecasts-list/effects';
 import { DailyForecastsModule } from './daily-forecasts/daily-forecasts.module';
 
+import { NzConfig, provideNzConfig} from 'ng-zorro-antd/core/config'
+
+import { NzButtonModule} from 'ng-zorro-antd/button'
+
+registerLocaleData(en);
+
+const ngZorroConfig: NzConfig = {
+  message: { nzTop: 120 },
+  notification: { nzTop: 240 }
+};
+
 @NgModule({
   declarations: [
     AppComponent
@@ -22,9 +37,11 @@ import { DailyForecastsModule } from './daily-forecasts/daily-forecasts.module';
     HttpClientModule,
     StoreModule.forRoot(reducers, {}),
     EffectsModule.forRoot([DailyForecastsEffects]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    NzButtonModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,20 +6,34 @@ import { EffectsModule } from '@ngrx/effects';
 import { DailyForecastsEffects } from '../store/daily-forecasts-list/effects';
 import { StoreModule } from '@ngrx/store';
 import { dailyForecastsListReducer } from '../store/daily-forecasts-list/reducer';
+import { DailyForecastViewComponent } from './daily-forecast-view/daily-forecast-view.component';
+import { DailyForecastEffects } from '../store/daily-forecast/effects';
+import { dailyForecastReducer } from '../store/daily-forecast/reducer';
+import { ForecastCardComponent } from './forecast-card/forecast-card.component';
 
+
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import  {NzGridModule} from 'ng-zorro-antd/grid'
+import {NzCardModule  } from 'ng-zorro-antd/card'
 
 
 @NgModule({
   declarations: [
-  
-    DailyForecastsListViewComponent
+    DailyForecastsListViewComponent,
+    DailyForecastViewComponent,
+    ForecastCardComponent
   ],
   imports: [
     CommonModule,
-    
-    StoreModule.forFeature('forecasts', dailyForecastsListReducer),
-    EffectsModule.forRoot([DailyForecastsEffects]),
-    EffectsModule.forFeature([DailyForecastsEffects])
+
+    NzGridModule,
+    NzButtonModule,
+    NzCardModule,
+
+    StoreModule.forFeature('forecasts', dailyForecastsListReducer,),
+    StoreModule.forFeature('forecast', dailyForecastReducer),
+    EffectsModule.forRoot([DailyForecastsEffects, DailyForecastEffects]),
+    EffectsModule.forFeature([DailyForecastsEffects, DailyForecastEffects])
   ],
   providers: [DailyForecastsService]
 })

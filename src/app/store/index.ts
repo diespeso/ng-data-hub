@@ -1,3 +1,4 @@
+import { DailyForecastState } from "./daily-forecast/reducer";
 import { DailyForecastsListState, dailyForecastsListReducer } from "./daily-forecasts-list/reducer";
 
 
@@ -6,5 +7,6 @@ export const reducers  = {
 }
 
 export interface AppState {
-  dailyForecastsList: DailyForecastsListState
+  dailyForecastsList: DailyForecastsListState,
+  dailyForecast: DailyForecastState,
 }
