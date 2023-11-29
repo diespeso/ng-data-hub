@@ -1,7 +1,17 @@
-<nz-card>
-  <div nz-row>
-    <div nz-col nzSpan="16">testing</div>
-    <div nz-col nzSpan="8">tesing2</div>
-  </div>
+<p-card>
+	<div class="grid">
+		<div class="col-8">
+			<div>
+				<span class="city-tag">Tijuana</span>
+			</div>
+			<span class="max-temp-display">{{maxTemp}}</span>
+			<span class="temp-divisor">/</span>
+			<span class="min-temp-display">{{minTemp}}</span>
+		</div>
+		<div class="col-4">
+			<svg width="20px" height="20px" [innerHtml]="this.iconSunny.body">
 
-</nz-card>
+			</svg>
+		</div>
+	</div>
+</p-card>

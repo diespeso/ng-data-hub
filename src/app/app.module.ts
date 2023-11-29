@@ -1,5 +1,4 @@
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { en_US } from 'ng-zorro-antd/i18n';
+
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { NgModule, isDevMode } from '@angular/core';
@@ -15,30 +14,33 @@ import { HttpClientModule } from '@angular/common/http';
 import { DailyForecastsEffects } from './store/daily-forecasts-list/effects';
 import { DailyForecastsModule } from './daily-forecasts/daily-forecasts.module';
 
-import { NzConfig, provideNzConfig} from 'ng-zorro-antd/core/config'
+import  { ButtonModule} from 'primeng/button'
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { MainPageModule } from './main-page/main-page.module';
+import { MainPageViewComponent } from './main-page/main-page-view/main-page-view.component';
+import { DateCountdownsEffects } from './store/date-countdows-list/effect';
+import { DateCountdownModule } from './date-countdown/date-countdown.module';
 
-import { NzButtonModule} from 'ng-zorro-antd/button'
 
 registerLocaleData(en);
 
-const ngZorroConfig: NzConfig = {
-  message: { nzTop: 120 },
-  notification: { nzTop: 240 }
-};
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
+		BrowserAnimationsModule,
     AppRoutingModule,
     DailyForecastsModule,
+		DateCountdownModule,
+		MainPageModule,
     HttpClientModule,
     StoreModule.forRoot(reducers, {}),
-    EffectsModule.forRoot([DailyForecastsEffects]),
+    EffectsModule.forRoot([DailyForecastsEffects, DateCountdownsEffects]),
+		ButtonModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    NzButtonModule
   ],
   providers: [
   ],

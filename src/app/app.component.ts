@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+
+import sunnyOutline from '@iconify/icons-material-symbols/sunny-outline'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,5 +11,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'hub-front';
 
-  
 }

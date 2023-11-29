@@ -11,10 +11,8 @@ import { DailyForecastEffects } from '../store/daily-forecast/effects';
 import { dailyForecastReducer } from '../store/daily-forecast/reducer';
 import { ForecastCardComponent } from './forecast-card/forecast-card.component';
 
+import { CardModule} from 'primeng/card'
 
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import  {NzGridModule} from 'ng-zorro-antd/grid'
-import {NzCardModule  } from 'ng-zorro-antd/card'
 
 
 @NgModule({
@@ -26,9 +24,7 @@ import {NzCardModule  } from 'ng-zorro-antd/card'
   imports: [
     CommonModule,
 
-    NzGridModule,
-    NzButtonModule,
-    NzCardModule,
+		CardModule,
 
     StoreModule.forFeature('forecasts', dailyForecastsListReducer,),
     StoreModule.forFeature('forecast', dailyForecastReducer),

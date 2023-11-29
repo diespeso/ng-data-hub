@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import sunnyOutline from '@iconify/icons-material-symbols/sunny-outline'
 
 @Component({
   selector: 'app-forecast-card',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class ForecastCardComponent {
 
+	iconSunny = sunnyOutline;
+
+ @Input() minTemp: number
+ @Input() maxTemp: number
+
+ constructor() {
+	console.log(this.iconSunny)
+ }
 }

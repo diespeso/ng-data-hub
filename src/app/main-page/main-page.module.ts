@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainPageViewComponent } from './main-page-view/main-page-view.component';
-import { NzButtonModule } from 'ng-zorro-antd/button';
 
-
+import { ButtonModule} from 'primeng/button'
 
 @NgModule({
   declarations: [
@@ -11,7 +10,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
   ],
   imports: [
     CommonModule,
-NzButtonModule
+    ButtonModule,
   ]
 })
 export class MainPageModule { }
